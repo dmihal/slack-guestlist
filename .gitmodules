@@ -1,0 +1,3 @@
+[submodule "lib/MeteorCollectionModels"]
+	path = lib/MeteorCollectionModels
+	url = https://github.com/dmihal/MeteorCollectionModels.git

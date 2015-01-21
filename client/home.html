@@ -1,0 +1,11 @@
+<template name="home">
+  {{#if currentUser}}
+    {{#if currentList}}
+      {{> list}}
+    {{else}}
+      {{> allLists}}
+    {{/if}}
+  {{else}}
+    {{> loginButtons}}
+  {{/if}}
+</template>

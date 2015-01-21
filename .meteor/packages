@@ -6,5 +6,7 @@
 meteor-platform
 autopublish
 insecure
-accounts-facebook
+accounts-ui
+accounts-password
+acemtp:accounts-slack
 

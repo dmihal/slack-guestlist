@@ -1,6 +1,7 @@
 <template name="list">
   <button class="back">Back</button>
   {{#with list}}
+    <input class="listTitle" value="{{title}}" />
     <h2>{{title}}</h2>
     {{> guestTable}}
   {{/with}}

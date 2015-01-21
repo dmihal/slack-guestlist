@@ -1,0 +1,11 @@
+.listTitle {
+  border: none;
+  font-size: 16pt;
+}
+.listTitle:hover {
+  background: #EEF;
+}
+.listTitle:focus {
+  border: solid 1px #66afe9;
+  background: #EEF;
+}

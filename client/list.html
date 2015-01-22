@@ -2,7 +2,7 @@
   <button class="back">Back</button>
   {{#with list}}
     <input class="listTitle" value="{{title}}" />
-    <h2>{{title}}</h2>
+    {{> listForm}}
     {{> guestTable}}
   {{/with}}
 </template>

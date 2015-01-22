@@ -1,0 +1,8 @@
+<template name="listForm">
+  <button class="newGuest">Add Guest</button>
+  {{#each guests}}
+    <div>
+      {{> listFormItem}}
+    </div>
+  {{/each}}
+</template>

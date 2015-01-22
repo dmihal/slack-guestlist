@@ -1,9 +1,7 @@
 <template name="guestTable">
   <table>
     {{#each guests}}
-      <tr>
-        {{firstName}} {{lastName}}
-      </tr>
+      {{> guestTableRow}}
     {{/each}}
   </table>
 </template>

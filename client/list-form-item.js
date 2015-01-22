@@ -6,5 +6,8 @@ Template.listFormItem.events({
       firstName: first,
       lastName: last
     }});
+  },
+  'click .remove': function(){
+    Guests.remove(this._id);
   }
 });

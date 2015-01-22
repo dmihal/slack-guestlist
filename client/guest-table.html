@@ -1,5 +1,11 @@
 <template name="guestTable">
-  <table>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Guest</th>
+        <th>Host</th>
+      </tr>
+    </thead>
     {{#each guests}}
       {{> guestTableRow}}
     {{/each}}

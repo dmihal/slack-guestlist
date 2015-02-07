@@ -1,6 +1,7 @@
 Template.list.events({
-  'click .back': function(){
+  'click .back': function(e){
     Session.set('currentList',null);
+    e.preventDefault();
   },
   'blur .listTitle': function(e, template){
     var newVal = template.find('.listTitle').value;

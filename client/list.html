@@ -1,8 +1,8 @@
 <template name="list">
-  <button class="back">Back</button>
+  <a class="back" href="#"><span class="glyphicon glyphicon-arrow-left"></span></a>
   {{#with list}}
-    {{> listInfoBar}}
     <input class="listTitle" value="{{title}}" />
+    {{> listInfoBar}}
     {{> listForm}}
     {{> guestTable}}
   {{/with}}

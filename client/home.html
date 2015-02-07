@@ -1,10 +1,19 @@
 <template name="home">
   {{#if currentUser}}
-    {{#if currentList}}
-      {{> list}}
-    {{else}}
-      {{> allLists}}
-    {{/if}}
+    <div class="container-fluid">
+     <div class="row">
+      <div class="col-md-2 sidebar">
+       Sidebar Content
+      </div>
+      <div class="col-md-10 col-md-offset-2 content">
+        {{#if currentList}}
+          {{> list}}
+        {{else}}
+          {{> allLists}}
+        {{/if}}
+      </div>
+     </div>
+    </div>
   {{else}}
     {{> loginButtons}}
   {{/if}}

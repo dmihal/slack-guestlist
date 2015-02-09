@@ -1,18 +1,17 @@
 Template.listForm.helpers({
   guests: function(){
-    return Guests.find({
-      list: this._id,
-      owner: Meteor.userId()
+    return TempGuests.find({
+      list: this._id
     });
   }
 });
 Template.listForm.events({
   'click .newGuest': function(){
-    Guests.insert({
+    TempGuests.insert({
       list: this._id,
-      owner: Meteor.userId(),
       firstName: '',
-      lastName: ''
+      lastName: '',
+      guestId: null
     });
   }
 });

@@ -13,3 +13,4 @@ mrt:bootstrap-3
 momentjs:moment
 
 dmihal:slack
+reactive-var

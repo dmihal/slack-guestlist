@@ -14,9 +14,9 @@ Meteor.startup(function(){
         list: doc.list
       }, function(err, id){
         if (!err){
-          TempGuests(doc._id, {
+          TempGuests.update(doc._id, {$set: {
             guestId: id
-          });
+          }});
         }
       });
     }
@@ -29,10 +29,10 @@ Meteor.startup(function(){
           newDoc.lastName  !== "" &&
           (newDoc.firstName !== oldDoc.firstName ||
            newDoc.lastName  !== oldDoc.lastName)){
-        Guests.update(newDoc.guestId, {
+        Guests.update(newDoc.guestId, {$set: {
           firstName: newDoc.firstName,
           lastName: newDoc.lastName
-        });
+        }});
       }
     },
     removed: function(doc){
@@ -44,22 +44,21 @@ Meteor.startup(function(){
     owner: Meteor.userId()
   }).observe({
     added: function(doc){
-      if (TempGuests.find({guestId: doc._id).count() == 0){
-        TempGuests.insert({
-          firstName: doc.firstName,
-          lastName: doc.lastName,
-          guestId: doc._id,
-          list: doc.list
-        });
-      }
+      doc.guestId = doc._id;
+      delete doc._id;
+      TempGuests.upsert({
+        firstName: doc.firstName,
+        lastName: doc.lastName,
+        list: doc.list
+      }, doc);
     },
     changed: function(doc){
       TempGuests.update({
         guestId: doc._id
-      },{
+      },{$set: {
         firstName: doc.firstName,
         lastName: doc.lastName
-      });
+      }});
     },
     removed: function(doc){
       var temp = TempGuests.findOne({guestId: doc._id});

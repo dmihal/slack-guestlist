@@ -1,8 +1,8 @@
 <template name="allLists">
-  <ul>
+  <ul class="allLists">
     {{#each lists}}
-      <li><a href="#" class="listlink">{{title}}</a></li>
+      {{> listTile}}
     {{/each}}
-    <button id="newList">New List</button>
   </ul>
+  <button id="newList">New List</button>
 </template>

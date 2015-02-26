@@ -1,8 +1,4 @@
 Template.allLists.events({
-  'click .listlink' : function(e){
-    Session.set('currentList', Lists.findOne()._id);
-    e.preventDefault();
-  },
   'click #newList': function(e){
     var id = Lists.insert({
       title: 'New List',

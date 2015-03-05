@@ -1,14 +1,18 @@
 <template name="guestTable">
-  <input class="filter form-control" placeholder="Filter" />
-  <table class="table table-striped">
-    <thead>
-      <tr>
-        <th>Guest</th>
-        <th>Host</th>
-      </tr>
-    </thead>
-    {{#each guests}}
-      {{> guestTableRow}}
-    {{/each}}
-  </table>
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <input class="filter form-control" placeholder="Filter" />
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Guest</th>
+            <th>Host</th>
+          </tr>
+        </thead>
+        {{#each guests}}
+          {{> guestTableRow}}
+        {{/each}}
+      </table>
+    </div>
+  </div>
 </template>

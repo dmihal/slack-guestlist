@@ -5,5 +5,9 @@
 }
 .listTile a {
   display: block;
-  padding: 10px;
+  width: 300px;
+}
+.listTile a:hover {
+  background: #F8F8FF;
+  text-decoration: none;
 }

@@ -1,5 +1,7 @@
 .listTile {
   list-style: none;
+  display: block;
+  float: left;
 }
 .listTile a {
   display: block;

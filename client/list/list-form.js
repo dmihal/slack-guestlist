@@ -3,6 +3,12 @@ Template.listForm.helpers({
     return TempGuests.find({
       list: this._id
     });
+  },
+  addGuestDisabled: function(){
+    return GetNumRemainngGuests() <= 0;
+  },
+  numRemainingGuests: function(){
+    return GetNumRemainngGuests();
   }
 });
 Template.listForm.events({

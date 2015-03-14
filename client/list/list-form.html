@@ -1,7 +1,8 @@
 <template name="listForm">
   <div class="panel panel-default">
     <div class="panel-body">
-      <button class="newGuest">Add Guest</button>
+      <span>{{numRemainingGuests}} remaining spots</span>
+      <button class="newGuest btn" disabled={{addGuestDisabled}} >Add Guest</button>
       {{#each guests}}
         <div>
           {{> listFormItem}}

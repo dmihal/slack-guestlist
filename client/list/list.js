@@ -1,3 +1,15 @@
+var getList = function(){
+  return Lists.findOne(Session.get('currentList'));
+};
+GetNumRemainngGuests = function(){
+  var list = getList();
+  var numGuests = TempGuests.find({
+    list: list._id
+  }).count();
+  var numGuestsAllowed = getNumAvailableGuests(list);
+  return numGuestsAllowed - numGuests;
+};
+
 Template.list.events({
   'click .back': function(e){
     Session.set('currentList',null);
@@ -11,7 +23,5 @@ Template.list.events({
   }
 });
 Template.list.helpers({
-  list: function(){
-    return Lists.findOne(Session.get('currentList'));
-  }
+  list: getList
 });

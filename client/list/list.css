@@ -1,11 +1,11 @@
 .listTitle {
-  border: none;
+  border: solid 1px white;
   font-size: 16pt;
 }
-.listTitle:hover {
+.listTitle.editable:hover {
   background: #EEF;
 }
-.listTitle:focus {
+.listTitle.editable:focus {
   border: solid 1px #66afe9;
   background: #EEF;
 }

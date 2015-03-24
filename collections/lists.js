@@ -12,3 +12,13 @@ getNumAvailableGuests = function(list, user){
   limit = 10; // For dev
   return limit;
 };
+canEditList = function(list, user){
+  if (Match.test(list, String)){
+    list = Lists.findOne(list);
+  }
+  if (user === undefined){
+    user = Meteor.user();
+  }
+
+  return (user._id == list.owner);
+}

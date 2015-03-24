@@ -23,5 +23,8 @@ Template.list.events({
   }
 });
 Template.list.helpers({
+  isAdmin: function(){
+    return canEditList(getList());
+  },
   list: getList
 });

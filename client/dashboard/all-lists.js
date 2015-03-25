@@ -12,6 +12,12 @@ Template.allLists.events({
       group: user.profile.team_id
     });
     Session.set('currentList', id);
+
+    var slackMessage = "@" + user.profile.name + " has created a new guest list. " +
+      "Edit the list at " + Meteor.absoluteUrl();
+    Slack.channels(channel).postMessage(slackMessage,{
+      username: "SlackApps"
+    });
   }
 });
 Template.allLists.helpers({

@@ -4,6 +4,14 @@
       {{> listTile}}
     {{/each}}
   </ul>
-  <br style="clear:both" />
-  <button id="newList">New List</button>
+  <div class="panel panel-default" style="clear:both">
+    <div class="panel-body">
+      <button id="newList">New List</button>
+      <select>
+        {{#each channels}}
+          <option value="{{_id}}">#{{name}}</option>
+        {{/each}}
+      </select>
+    </div>
+  </div>
 </template>

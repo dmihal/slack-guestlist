@@ -12,5 +12,8 @@ Template.listTile.helpers({
     statElements.push(count + " guests");
 
     return statElements.join(' - ')
+  },
+  channelName: function(){
+    return Slack.channels(this.channel).name;
   }
 });

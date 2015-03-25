@@ -2,7 +2,12 @@
   <li class="listTile">
     <a href="#" class="listlink panel panel-info">
       <div class="cardTitle panel-heading">{{title}}</div>
-      <div class="panel-body">{{stats}}</div>
+      <div class="panel-body">
+        {{#if channel}}
+          <div>For channel #{{channelName}}</div>
+        {{/if}}
+        <div>{{stats}}</div>
+      </div>
     </a>
   </li>
 </template>

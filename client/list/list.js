@@ -12,7 +12,7 @@ GetNumRemainngGuests = function(){
 
 Template.list.events({
   'click .back': function(e){
-    Session.set('currentList',null);
+    Router.go('lists');
     e.preventDefault();
   },
   'blur .listTitle': function(e, template){
@@ -25,6 +25,5 @@ Template.list.events({
 Template.list.helpers({
   isAdmin: function(){
     return canEditList(getList());
-  },
-  list: getList
+  }
 });

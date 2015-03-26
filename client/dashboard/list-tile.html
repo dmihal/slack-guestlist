@@ -1,6 +1,6 @@
 <template name="listTile">
   <li class="listTile">
-    <a href="#" class="listlink panel panel-info">
+    <a href="{{pathFor route='list.show' data=this}}" class="listlink panel panel-info">
       <div class="cardTitle panel-heading">{{title}}</div>
       <div class="panel-body">
         {{#if channel}}

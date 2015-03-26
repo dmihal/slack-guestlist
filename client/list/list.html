@@ -1,9 +1,7 @@
 <template name="list">
-  <a class="back" href="#"><span class="glyphicon glyphicon-arrow-left"></span></a>
-  {{#with list}}
-    <input class="listTitle {{conditional isAdmin 'editable'}}" value="{{title}}" readonly={{not isAdmin}} />
-    {{> listInfoBar}}
-    {{> listForm}}
-    {{> guestTable}}
-  {{/with}}
+  <a class="back" href="{{pathFor route='lists'}}"><span class="glyphicon glyphicon-arrow-left"></span></a>
+  <input class="listTitle {{conditional isAdmin 'editable'}}" value="{{title}}" readonly={{not isAdmin}} />
+  {{> listInfoBar}}
+  {{> listForm}}
+  {{> guestTable}}
 </template>

@@ -66,3 +66,12 @@ Meteor.startup(function(){
     }
   });
 });
+
+
+GetNumRemainngGuests = function(list, user){
+  var numGuests = TempGuests.find({
+    list: list._id
+  }).count();
+  var numGuestsAllowed = getNumAvailableGuests(list);
+  return numGuestsAllowed - numGuests;
+};

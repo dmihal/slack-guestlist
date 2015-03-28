@@ -12,11 +12,13 @@ Template.listForm.helpers({
   }
 });
 Template.listForm.events({
-  'click .newGuest': function(){
+  'click .newGuest': function(e){
+    var sex = e.target.dataset.sex;
     TempGuests.insert({
       list: this._id,
       firstName: '',
       lastName: '',
+      sex: sex,
       guestId: null
     });
   }

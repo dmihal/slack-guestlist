@@ -2,7 +2,8 @@
   <div class="panel panel-default">
     <div class="panel-body">
       <span>{{numRemainingGuests}} remaining spots</span>
-      <button class="newGuest btn" disabled={{addGuestDisabled}} >Add Guest</button>
+      <button class="newGuest btn" data-sex="guy" disabled={{addGuestDisabled}} >Add Guy</button>
+      <button class="newGuest btn" data-sex="girl" disabled={{addGuestDisabled}} >Add Girl</button>
       {{#each guests}}
         <div>
           {{> listFormItem}}

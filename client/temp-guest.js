@@ -10,6 +10,7 @@ Meteor.startup(function(){
       Guests.insert({
         firstName: doc.firstName,
         lastName: doc.lastName,
+        sex: doc.sex,
         owner: Meteor.userId(),
         list: doc.list
       }, function(err, id){

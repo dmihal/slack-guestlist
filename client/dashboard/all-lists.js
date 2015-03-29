@@ -13,8 +13,9 @@ Template.allLists.events({
     });
     Session.set('currentList', id);
 
+    var listURL = Router.url("list.show", {_id: id});
     var slackMessage = "@" + user.profile.name + " has created a new guest list. " +
-      "Edit the list at " + Meteor.absoluteUrl();
+      "Edit the list at " + listURL;
     Slack.channels(channel).postMessage(slackMessage,{
       username: "SlackApps"
     });

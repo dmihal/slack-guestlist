@@ -1,5 +1,5 @@
 Meteor.startup(function(){
-  TempGuests = new Mongo.Collection();
+  TempGuests = new Mongo.Collection(null);
 
   TempGuests.find({
     firstName: {$ne: ''},

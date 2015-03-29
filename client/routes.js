@@ -1,3 +1,5 @@
+var originalDestination = null;
+
 Router.configure({
   layoutTemplate: 'home'
 });
@@ -7,7 +9,12 @@ Router.route('/', function(){
 });
 Router.route('/login', function(){
   if (Meteor.user()){
-    this.redirect('/lists');
+    var redirect = '/lists';
+    if (originalDestination){
+      redirect = originalDestination;
+      originalDestination = null;
+    }
+    this.redirect(redirect);
   } else {
     this.render('loginButtons');
   }
@@ -29,6 +36,7 @@ Router.route('/lists/:_id', function(){
 
 Tracker.autorun(function(){
   if (!Meteor.user()){
+    originalDestination = location.pathname;
     Router.go('/login');
   }
 });

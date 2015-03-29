@@ -5,10 +5,10 @@ Template.listForm.helpers({
     });
   },
   addGuestDisabled: function(){
-    return GetNumRemainngGuests() <= 0;
+    return GetNumRemainngGuests(this) <= 0;
   },
   numRemainingGuests: function(){
-    return GetNumRemainngGuests();
+    return GetNumRemainngGuests(this);
   }
 });
 Template.listForm.events({

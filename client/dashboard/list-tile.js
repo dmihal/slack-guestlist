@@ -1,6 +1,6 @@
 Template.listTile.events({
   'click .listlink' : function(e){
-    Session.set('currentList', this._id);
+    Router.go('list.show', this);
     e.preventDefault();
   }
 });

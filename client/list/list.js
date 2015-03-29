@@ -1,18 +1,6 @@
-var getList = function(){
-  return Lists.findOne(Session.get('currentList'));
-};
-GetNumRemainngGuests = function(){
-  var list = getList();
-  var numGuests = TempGuests.find({
-    list: list._id
-  }).count();
-  var numGuestsAllowed = getNumAvailableGuests(list);
-  return numGuestsAllowed - numGuests;
-};
-
 Template.list.events({
   'click .back': function(e){
-    Session.set('currentList',null);
+    Router.go('lists');
     e.preventDefault();
   },
   'blur .listTitle': function(e, template){
@@ -24,7 +12,6 @@ Template.list.events({
 });
 Template.list.helpers({
   isAdmin: function(){
-    return canEditList(getList());
-  },
-  list: getList
+    return canEditList(this);
+  }
 });

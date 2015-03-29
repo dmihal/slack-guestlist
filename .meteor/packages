@@ -15,3 +15,4 @@ momentjs:moment
 dmihal:slack
 reactive-var
 check
+iron:router

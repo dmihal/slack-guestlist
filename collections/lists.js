@@ -9,7 +9,11 @@ getNumAvailableGuests = function(list, user){
   }
 
   var limit = Infinity;
-  limit = 10; // For dev
+  if (list.limit){
+    if (list.limit.type == "user"){
+      limit = list.limit.guestsPerUser;
+    }
+  }
   return limit;
 };
 canEditList = function(list, user){

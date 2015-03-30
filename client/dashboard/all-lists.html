@@ -6,12 +6,16 @@
   </ul>
   <div class="panel panel-default" style="clear:both">
     <div class="panel-body">
-      <button id="newList">New List</button>
+      <button id="newList" class="btn">New List</button>
       <select>
         {{#each channels}}
           <option value="{{_id}}">#{{name}}</option>
         {{/each}}
       </select>
+      <label>
+        Guests per user:
+        <input type="number" id="numGuests" value="3" min="1" />
+      </label>
     </div>
   </div>
 </template>

@@ -29,10 +29,5 @@ Template.allLists.events({
 Template.allLists.helpers({
   lists: function(){
     return Lists.find();
-  },
-  channels: function(){
-    return Slack.channels({
-      members: Meteor.user().services.slack.id
-    });
   }
 });

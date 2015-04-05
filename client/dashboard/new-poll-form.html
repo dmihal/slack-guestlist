@@ -1,0 +1,21 @@
+<template name="newPollForm">
+  <form>
+    <div class="form-group">
+      <label for="title">Poll title/question</label>
+      <input type="text" class="form-control" id="title" placeholder="Where should we go for lunch?">
+    </div>
+    <div class="form-group">
+      <label>Answers</label>
+      {{#each answers}}
+        <div>
+          <input class="txtAnswer" />
+          <a href="#" class="remove"><span class="glyphicon glyphicon-remove"></span></a>
+        </div>
+      {{/each}}
+      <div>
+        <a href class="addAnswer">Add Answer</a>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-default">Create</button>
+  </form>
+</template>

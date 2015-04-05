@@ -7,7 +7,8 @@ Template.listFormItem.events({
       lastName: last
     }});
   },
-  'click .remove': function(){
+  'click .remove': function(e){
     TempGuests.remove(this._id);
+    e.preventDefault();
   }
 });

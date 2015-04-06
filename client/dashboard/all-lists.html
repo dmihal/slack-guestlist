@@ -1,5 +1,10 @@
 <template name="allLists">
   <ul class="allLists">
+    <li class="listTile plusTile">
+      <a href="" class="listlink panel panel-info">
+        <div><span class="glyphicon glyphicon-plus"></span></div>
+      </a>
+    </li>
     {{#each lists}}
       {{> listTile}}
     {{/each}}

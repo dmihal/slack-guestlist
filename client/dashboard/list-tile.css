@@ -2,12 +2,26 @@
   list-style: none;
   display: block;
   float: left;
+  margin: 5px;
 }
 .listTile a {
   display: block;
-  width: 300px;
+  width: 200px;
+  height: 200px;
+  border-radius: 20px;
 }
 .listTile a:hover {
   background: #F8F8FF;
   text-decoration: none;
+}
+
+
+.plusTile a {
+  background: white;
+  border: dashed 2px gray;
+}
+.plusTile a div {
+  line-height: 196px;
+  text-align: center;
+  font-size: 42pt;
 }

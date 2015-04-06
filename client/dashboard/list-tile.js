@@ -14,6 +14,7 @@ Template.listTile.helpers({
     return statElements.join(' - ')
   },
   channelName: function(){
-    return Slack.channels(this.channel).name;
+    var channel = Slack.channels(this.channel);
+    return channel ? channel.name : "";
   }
 });

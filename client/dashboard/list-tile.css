@@ -8,11 +8,24 @@
   display: block;
   width: 200px;
   height: 200px;
+  border: solid 2px gray;
   border-radius: 20px;
 }
 .listTile a:hover {
   background: #F8F8FF;
   text-decoration: none;
+}
+
+.listTile .cardTitle {
+  font-size: 16pt;
+  margin: 15px 10px 0;
+}
+.listTile .cardChannel {
+  font-size: 13pt;
+  margin: 0 10px 5px;
+}
+.listTile .cardBody {
+  margin: 5px 10px;
 }
 
 

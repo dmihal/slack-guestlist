@@ -2,6 +2,24 @@
   <div>
     <a href="{{pathFor route='lists'}}">Back</a>
     <h2>Step 1: Select Widget</h2>
-    <h2>Step 2: Customize Widget</h2>
+    <div>
+      <div class="btn-group-vertical" data-toggle="buttons">
+        <label class="btn btn-primary">
+          <input type="radio" name="options" class="widgetListEl" id="option1" value="list">
+          Guest List
+        </label>
+        <label class="btn btn-primary">
+          <input type="radio" name="options" class="widgetListEl" id="option2" value="poll">
+          Poll
+        </label>
+        <label class="btn btn-primary" disabled>
+          <input type="radio" name="options" class="widgetListEl" id="option3" value="scheduler">
+          Meeting Scheduler
+        </label>
+      </div>
+    </div>
+    {{#if type}}
+      <h2>Step 2: Customize Widget</h2>
+    {{/if}}
   </div>
 </template>

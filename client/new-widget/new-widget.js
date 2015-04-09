@@ -3,6 +3,10 @@ var widgetType = new ReactiveVar(null);
 Template.newWidget.helpers({
   type: function(){
     return widgetType.get();
+  },
+  formTemplateName: function(){
+    var type = widgetType.get();
+    return type ? "new" + capitalize(type) + "Form" : null;
   }
 });
 Template.newWidget.events({
@@ -11,3 +15,4 @@ Template.newWidget.events({
     widgetType.set(selected ? selected.value : null);
   }
 });
+

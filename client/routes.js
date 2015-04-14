@@ -16,7 +16,7 @@ Router.route('/login', function(){
     }
     this.redirect(redirect);
   } else {
-    this.render('loginButtons');
+    this.render('login');
   }
 });
 Router.route('/lists', function(){

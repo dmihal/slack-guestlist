@@ -1,17 +1,14 @@
 <template name="allLists">
   <ul class="allLists">
+    <li class="listTile plusTile">
+      <a href="{{pathFor route='new-widget'}}" class="listlink">
+        <div><span class="glyphicon glyphicon-plus"></span></div>
+      </a>
+    </li>
     {{#each lists}}
       {{> listTile}}
     {{/each}}
   </ul>
-  <div class="panel panel-default" style="clear:both">
-    <div class="panel-body">
-      <button id="newList" class="btn">New List</button>
-      {{> selectChannel}}
-      <label>
-        Guests per user:
-        <input type="number" id="numGuests" value="3" min="1" />
-      </label>
-    </div>
+  <div style="clear:both">
   </div>
 </template>

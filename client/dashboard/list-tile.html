@@ -1,11 +1,13 @@
 <template name="listTile">
   <li class="listTile">
-    <a href="{{pathFor route='list.show' data=this}}" class="listlink panel panel-info">
-      <div class="cardTitle panel-heading">{{title}}</div>
-      <div class="panel-body">
-        {{#if channel}}
-          <div>For channel #{{channelName}}</div>
-        {{/if}}
+    <a href="{{pathFor route='list.show' data=this}}" class="listlink">
+      <div class="cardTitle">{{title}}</div>
+      {{#if channel}}
+        <div class="cardChannel">
+          #{{channelName}}
+        </div>
+      {{/if}}
+      <div class="cardBody">
         <div>{{stats}}</div>
       </div>
     </a>

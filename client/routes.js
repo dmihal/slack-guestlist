@@ -24,6 +24,11 @@ Router.route('/lists', function(){
 },{
   name: 'lists'
 });
+Router.route('/new-widget', function(){
+  this.render('newWidget');
+},{
+  name: 'new-widget'
+});
 Router.route('/lists/:_id', function(){
   this.render('list', {
     data: function(){

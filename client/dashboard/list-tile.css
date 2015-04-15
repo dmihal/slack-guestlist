@@ -2,12 +2,54 @@
   list-style: none;
   display: block;
   float: left;
+  margin: 5px;
 }
 .listTile a {
   display: block;
-  width: 300px;
+  width: 200px;
+  height: 200px;
+  border: solid 2px gray;
+  border-radius: 20px;
 }
 .listTile a:hover {
   background: #F8F8FF;
   text-decoration: none;
+}
+
+.listTile .cardTitle {
+  font-size: 16pt;
+  margin: 15px 10px 0;
+}
+.listTile .cardChannel {
+  font-size: 13pt;
+  margin: 0 10px 5px;
+}
+.listTile .cardBody {
+  margin: 5px 10px;
+}
+
+
+.plusTile a {
+  background: white;
+  border: dashed 2px gray;
+}
+.plusTile a div {
+  line-height: 196px;
+  text-align: center;
+  font-size: 42pt;
+}
+
+
+@media (max-width: 768px) {
+  .listTile {
+    float: none;
+  }
+  .listTile a {
+    width: inherit;
+    height: inherit;
+  }
+  .plusTile a div {
+    line-height: 78px;
+    font-size: 36pt;
+  }
 }

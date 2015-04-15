@@ -5,9 +5,10 @@ Template.newListForm.events({
     var user = Meteor.user();
     var channel = template.find('select').value;
     var numGuests = template.find('#numGuests').value;
+    var title = template.find('#title').value;
     var id = Lists.insert({
       type: 'list',
-      title: template.find('#title').value,
+      title: title,
       eventDate: null,
       closes: null,
       owner: user._id,
@@ -20,7 +21,8 @@ Template.newListForm.events({
     });
 
     var listURL = Router.url("list.show", {_id: id});
-    var slackMessage = "@" + user.profile.name + " has created a new guest list. " +
+    var slackMessage = "@" + user.profile.name + " has created a new guest list called \"" + 
+       title + "\". " +
       "Edit the list at " + listURL;
     Slack.channels(channel).postMessage(slackMessage,{
       username: "SlackApps"

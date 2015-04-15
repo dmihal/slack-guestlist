@@ -16,7 +16,20 @@ Guests.allow({
 
 Guests.deny({
   insert: function (userId, doc){
-    return !userId;
+    //User must be logged in
+    if (!userId){
+      return true;
+    }
+    var count = Guests.find({
+      owner: userId,
+      list: doc.list
+    }).count();
+    var maxGuests = getNumAvailableGuests(doc.list, Meteor.users.find(userId));
+    // Can't add guest if user is already at their limit
+    if (count >= maxGuests){
+      return true;
+    }
+    return false;
   },
   update: function (userId, docs, fields, modifier) {
     return !userId;

@@ -38,5 +38,13 @@ Tracker.autorun(function(){
   if (!Meteor.user()){
     originalDestination = location.pathname;
     Router.go('/login');
+  } else {
+    var url;
+    Tracker.nonreactive(function(){
+      url = Router.current().url;
+    });
+    if (url == "/login"){
+      Router.go('/lists');
+    }
   }
 });

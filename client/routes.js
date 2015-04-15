@@ -4,6 +4,17 @@ Router.configure({
   layoutTemplate: 'home'
 });
 
+var ensureLoggedIn = function(){
+  if (!Meteor.userId()) {
+    // if the user is not logged in, render the Login template
+    this.redirect('/login');
+  } else {
+    // otherwise don't hold up the rest of hooks or our route/action function
+    // from running
+    this.next();
+  }
+};
+
 Router.route('/', function(){
   this.redirect('/login');
 });
@@ -22,12 +33,14 @@ Router.route('/login', function(){
 Router.route('/lists', function(){
   this.render('allLists');
 },{
-  name: 'lists'
+  name: 'lists',
+  onBeforeAction: ensureLoggedIn
 });
 Router.route('/new-widget', function(){
   this.render('newWidget');
 },{
-  name: 'new-widget'
+  name: 'new-widget',
+  onBeforeAction: ensureLoggedIn
 });
 Router.route('/lists/:_id', function(){
   this.render('list', {
@@ -36,7 +49,8 @@ Router.route('/lists/:_id', function(){
     }
   });
 },{
-  name: 'list.show'
+  name: 'list.show',
+  onBeforeAction: ensureLoggedIn
 });
 
 Tracker.autorun(function(){

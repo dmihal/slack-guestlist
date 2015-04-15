@@ -11,7 +11,9 @@ Template.guestTable.helpers({
         {lastName:  regex}
       ];
     }
-    return Guests.find(query);
+    return Guests.find(query, {
+      sort: {lastName: 1}
+    });
   }
 });
 Template.guestTable.events({

@@ -38,3 +38,18 @@
   text-align: center;
   font-size: 42pt;
 }
+
+
+@media (max-width: 768px) {
+  .listTile {
+    float: none;
+  }
+  .listTile a {
+    width: inherit;
+    height: inherit;
+  }
+  .plusTile a div {
+    line-height: 78px;
+    font-size: 36pt;
+  }
+}

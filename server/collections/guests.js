@@ -24,7 +24,7 @@ Guests.deny({
       owner: userId,
       list: doc.list
     }).count();
-    var maxGuests = getNumAvailableGuests(doc.list, Meteor.users.find(userId));
+    var maxGuests = getNumAvailableGuests(doc.list, Meteor.users.findOne(userId));
     // Can't add guest if user is already at their limit
     if (count >= maxGuests){
       return true;
